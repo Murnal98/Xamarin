@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EmployeeAllowanceApp.MainPage"
+             Title="Allowance Login-App">
+    
+
+
+    <ContentPage.Content>
+        <StackLayout Margin="25" VerticalOptions="Center">
+
+            <Image Source="astoria.png" WidthRequest="80" HeightRequest="80" ></Image>
+
+            <Label Text="API URL:" FontSize="Large" FontAttributes="Bold" Margin="0,0,0,10"/>
+            <Entry  Placeholder="Type here..." ></Entry>
+
+
+            <Label Text="Username" FontSize="20" FontAttributes="Bold"/>
+            <Entry x:Name="entryUserName" Placeholder="Type here..." ></Entry>
+
+            <Label Text="Password" FontSize="20" FontAttributes="Bold" />
+            <Entry x:Name="entryPassword" Placeholder="Type here..." IsPassword="True"></Entry>
+
+            <Button x:Name="btnLogin"
+                       Text="LOGIN" Clicked="btnLogin_Clicked"
+                       TextColor="White"
+                       VerticalOptions="Center"
+                       BackgroundColor="DarkBlue"
+                       BorderColor="White"
+                       BorderWidth="5"
+                       CornerRadius="50"></Button>
+            <StackLayout> 
+                <Grid>
+                <Label Text="Remember Me" TextColor="Black" FontSize="20"></Label>
+            <Switch OnColor="Orange" 
+                ThumbColor="DarkBlue"/>
+            </Grid>
+        </StackLayout>
+
+
+        <StackLayout Orientation="Horizontal" Margin="30">
+                <Label Text="Clear App Data:" FontSize="Large" HorizontalOptions="Center"></Label>
+                <Button Text="Click Me!" WidthRequest="80" HeightRequest="40" FontSize="Small" Background="Red"
+                        BorderWidth="5"
+                        TextColor="White"
+                        BorderColor="White"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Fill"/>
+            </StackLayout>
+            
+                    </StackLayout>
+            </ContentPage.Content>
+    </ContentPage>
+
+
+

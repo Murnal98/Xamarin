@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EmployeeAllowanceApp.AllowancePage"
+             Title="Allowance App" >
+
+    <ContentPage.Content>
+        <StackLayout>
+
+            <StackLayout Orientation="Horizontal" BackgroundColor="Black"  HeightRequest="100">
+            <Image Source="Hexagone.png" WidthRequest="50" HeightRequest="50" VerticalOptions="Center" HorizontalOptions="Start"></Image>
+            <Label Text="Allowance App" HorizontalOptions="StartAndExpand" VerticalOptions="Center" FontSize="30" TextColor="White"></Label>
+            </StackLayout>
+
+            <StackLayout BackgroundColor="Red" HeightRequest="180">
+                <Label x:Name="mylabel" WidthRequest="180" HeightRequest="180" FontSize="50" Margin="50"></Label>
+            </StackLayout>
+
+            <StackLayout Background="black" HeightRequest="200">
+            <ImageButton Source="Real.png" x:Name="btnLogin" BackgroundColor="Black" Clicked="btnLogin_Clicked" WidthRequest="150" HeightRequest="150" HorizontalOptions="Center" VerticalOptions="Center"></ImageButton>
+            <Label Text="Add Allowance" TextColor="White" WidthRequest="180" HeightRequest="180" BackgroundColor="Black" FontSize="Large" HorizontalOptions="Center"></Label>
+       
+            </StackLayout>
+            
+            
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

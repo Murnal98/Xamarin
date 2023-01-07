@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+    
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:EmployeeAllowanceApp="clr-namespace:EmployeeAllowanceApp.Model" xmlns:view_model="clr-namespace:EmployeeAllowanceApp.View_Model" xmlns:syncfusion="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms" x:DataType="view_model:AllowanceView" 
+             x:Class="EmployeeAllowanceApp.Amount" >
+
+    
+    <ContentPage.Content>
+        <StackLayout Margin="10">
+            <StackLayout Orientation="Horizontal" BackgroundColor="Black" HeightRequest="80" VerticalOptions="Center">
+                <Image Source="Hexagone.png" WidthRequest="50" HeightRequest="50" VerticalOptions="Start" HorizontalOptions="Start"></Image>
+                <Label Text="Allowance App" HorizontalOptions="StartAndExpand"  FontSize="30" TextColor="White"></Label>
+            </StackLayout>
+
+            
+            <StackLayout Margin="20">
+               <StackLayout >
+                    <Label Text="Allowance" FontSize="20" FontAttributes="Bold" TextColor="Blue" ></Label>
+                    <Picker ItemsSource ="{Binding Items}" SelectedItem="{Binding SelectedAllowance, Mode=TwoWay}" ItemDisplayBinding="{Binding AllowanceName}" BackgroundColor="#d3d3d3"></Picker>
+               </StackLayout>
+
+                
+                <StackLayout >
+                    <Label Text="Amount" FontSize="20" FontAttributes="Bold" TextColor="Blue"/>
+                    <Entry Placeholder="EnterAmount" Text="{Binding AllowanceAmount}" BackgroundColor="#d3d3d3"></Entry>
+                </StackLayout>
+                
+                <Button Text="Done" Command="{Binding SaveCommand}"
+                        HorizontalOptions="FillAndExpand"
+                        x:Name="btnLogin"                       
+                        TextColor="White"                       
+                        BackgroundColor="Green"
+                        BorderColor="White"
+                        BorderWidth="2"
+                        CornerRadius="20"></Button>
+            </StackLayout>
+
+
+            <syncfusion:SfCheckBox  Text="Check" IsChecked="{x:Null}" HorizontalOptions="End" StateChanged="CheckBox_CheckChange"></syncfusion:SfCheckBox> 
+                                    
+           
+            <StackLayout>
+                
+                    <ListView ItemsSource="{Binding AttendancesItem}">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                
+                                    <StackLayout Orientation="Horizontal" VerticalOptions="FillAndExpand" 
+                                                 HorizontalOptions="FillAndExpand"
+                                                 Margin="8" x:DataType="EmployeeAllowanceApp:AttendanceModel">
+                                        <Grid>
+                                            <CheckBox x:Name="Check" IsChecked="{Binding IsSelected, Mode=TwoWay }"
+                                              x:DataType="EmployeeAllowanceApp:AttendanceModel" 
+                                              CheckedChanged="CheckBox_CheckChange" ></CheckBox>
+                                    </Grid>
+                                    <Label Text="{Binding EmployeeName}" FontSize="20" FontAttributes="Bold"/>
+                                   
+                                </StackLayout>
+                                
+                            </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+               
+                
+
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+
+
